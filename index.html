@@ -3,178 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>副業ナビ | 無料副業診断</title>
+
+<title>副業ナビ｜無料副業診断</title>
+
+<meta name="description"
+content="あなたに合った副業を無料で診断。初心者でも始めやすい副業を診断できます。">
 
 <style>
-* {
-    box-sizing: border-box;
+
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
     font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Noto Sans JP",
-        sans-serif;
-    background: #f4f6f8;
-    color: #111827;
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans JP",
+    sans-serif;
+
+    background:#f4f6f8;
+    color:#111827;
 }
 
-.container {
-    width: 100%;
-    max-width: 520px;
-    margin: auto;
-    min-height: 100vh;
-    background: white;
+.container{
+    width:100%;
+    max-width:560px;
+    margin:auto;
+    min-height:100vh;
+    background:#fff;
 }
 
-.header {
-    background: linear-gradient(135deg, #111827, #1e3a8a);
-    color: white;
-    padding: 35px 22px;
-    text-align: center;
+/* HEADER */
+
+.header{
+    background:
+    linear-gradient(135deg,#0f172a,#1d4ed8);
+
+    color:white;
+    padding:42px 22px 38px;
+    text-align:center;
 }
 
-.logo {
-    font-size: 14px;
-    letter-spacing: 3px;
-    opacity: .8;
+.logo{
+    font-size:13px;
+    letter-spacing:4px;
+    opacity:.8;
 }
 
-.header h1 {
-    margin: 12px 0 8px;
-    font-size: 30px;
+.header h1{
+    margin:12px 0 10px;
+    font-size:34px;
 }
 
-.header p {
-    margin: 0;
-    opacity: .9;
+.header p{
+    margin:0;
+    font-size:15px;
+    opacity:.9;
 }
 
-.content {
-    padding: 25px 20px 40px;
+/* CONTENT */
+
+.content{
+    padding:26px 20px 50px;
 }
 
-.progress {
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 25px;
+.progress{
+    height:7px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:28px;
 }
 
-.progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #2563eb;
-    transition: .3s;
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#2563eb;
+    transition:.3s;
 }
 
-.question-number {
-    font-size: 13px;
-    color: #6b7280;
-    margin-bottom: 8px;
+.question-number{
+    font-size:13px;
+    color:#6b7280;
+    margin-bottom:8px;
 }
 
-.question {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.question{
+    font-size:24px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:22px;
 }
 
-.option {
-    width: 100%;
-    border: 1px solid #d1d5db;
-    background: white;
-    padding: 17px;
-    margin-bottom: 12px;
-    border-radius: 12px;
-    text-align: left;
-    font-size: 15px;
-    cursor: pointer;
-    transition: .2s;
+.option{
+    width:100%;
+    border:1px solid #d1d5db;
+    background:white;
+    padding:18px;
+    margin-bottom:12px;
+    border-radius:14px;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.option:hover {
-    border-color: #2563eb;
-    background: #eff6ff;
+.option:active{
+    transform:scale(.98);
 }
 
-.option.selected {
-    border-color: #2563eb;
-    background: #dbeafe;
+.option:hover{
+    border-color:#2563eb;
+    background:#eff6ff;
+}
+
+.option.selected{
+    border:2px solid #2563eb;
+    background:#dbeafe;
+    color:#1d4ed8;
+    font-weight:bold;
 }
 
 .next-btn,
-.restart-btn {
-    width: 100%;
-    border: none;
-    padding: 16px;
-    border-radius: 12px;
-    color: white;
-    background: #2563eb;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+.restart-btn,
+.line-btn,
+.share-btn{
+    width:100%;
+    border:none;
+    padding:17px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.next-btn:disabled {
-    background: #9ca3af;
-    cursor: not-allowed;
+.next-btn{
+    margin-top:8px;
+    background:#2563eb;
+    color:white;
 }
 
-.result-title {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 8px;
+.next-btn:disabled{
+    background:#9ca3af;
 }
 
-.result-subtitle {
-    text-align: center;
-    color: #6b7280;
-    margin-bottom: 25px;
+.hidden{
+    display:none;
 }
 
-.result-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+/* RESULT */
+
+.result-title{
+    text-align:center;
+    font-size:28px;
+    margin:10px 0 8px;
 }
 
-.result-card h3 {
-    margin-top: 0;
-    font-size: 20px;
+.result-subtitle{
+    text-align:center;
+    color:#6b7280;
+    margin-bottom:28px;
 }
 
-.tag {
-    display: inline-block;
-    background: #eff6ff;
-    color: #2563eb;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-bottom: 10px;
+.result-card{
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:18px;
+    box-shadow:0 6px 22px rgba(0,0,0,.06);
 }
 
-.income {
-    font-weight: bold;
-    margin-top: 12px;
+.rank{
+    display:inline-block;
+    font-size:12px;
+    font-weight:bold;
+    color:#2563eb;
+    background:#eff6ff;
+    padding:6px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
 }
 
-.hidden {
-    display: none;
+.result-card h3{
+    font-size:21px;
+    margin:5px 0 12px;
 }
 
-.footer {
-    text-align: center;
-    color: #9ca3af;
-    font-size: 12px;
-    padding: 20px;
+.result-card p{
+    line-height:1.7;
+    color:#374151;
 }
+
+.income{
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.start-title{
+    margin-top:20px;
+    font-size:17px;
+}
+
+.steps{
+    padding-left:20px;
+    line-height:1.9;
+}
+
+.detail-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#111827;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    margin-top:18px;
+    font-weight:bold;
+}
+
+/* CTA */
+
+.cta{
+    margin-top:28px;
+    padding:25px 20px;
+    border-radius:18px;
+    background:
+    linear-gradient(135deg,#111827,#1e3a8a);
+    color:white;
+    text-align:center;
+}
+
+.cta h3{
+    margin-top:0;
+    font-size:22px;
+}
+
+.cta p{
+    line-height:1.7;
+    opacity:.9;
+}
+
+.line-btn{
+    background:#06c755;
+    color:white;
+    margin-top:10px;
+}
+
+.share-btn{
+    background:#e5e7eb;
+    color:#111827;
+    margin-top:12px;
+}
+
+.restart-btn{
+    background:#2563eb;
+    color:white;
+    margin-top:18px;
+}
+
+/* INFO */
+
+.info{
+    margin-top:30px;
+}
+
+.info h2{
+    font-size:21px;
+}
+
+.info-card{
+    background:#f8fafc;
+    border-radius:14px;
+    padding:17px;
+    margin-bottom:12px;
+}
+
+.info-card h3{
+    margin-top:0;
+}
+
+.info-card p{
+    line-height:1.7;
+    color:#4b5563;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:#9ca3af;
+    font-size:12px;
+    padding:25px;
+}
+
+.notice{
+    font-size:11px;
+    color:#9ca3af;
+    line-height:1.6;
+    margin-top:20px;
+}
+
 </style>
 </head>
 
@@ -183,391 +317,743 @@ body {
 <div class="container">
 
 <header class="header">
-    <div class="logo">SIDE JOB NAVI</div>
-    <h1>副業ナビ</h1>
-    <p>あなたに合う副業を無料診断</p>
+
+<div class="logo">
+SIDE JOB NAVI
+</div>
+
+<h1>副業ナビ</h1>
+
+<p>
+あなたに合う副業を無料診断
+</p>
+
 </header>
+
 
 <main class="content">
 
-    <!-- 診断画面 -->
-    <section id="quiz">
+<!-- QUIZ -->
 
-        <div class="progress">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
+<section id="quiz">
 
-        <div class="question-number" id="questionNumber"></div>
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
 
-        <div class="question" id="question"></div>
+<div class="question-number" id="questionNumber"></div>
 
-        <div id="options"></div>
+<div class="question" id="question"></div>
 
-        <button
-            class="next-btn"
-            id="nextButton"
-            disabled
-            onclick="nextQuestion()">
-            次へ
-        </button>
+<div id="options"></div>
 
-    </section>
+<button
+class="next-btn"
+id="nextButton"
+disabled
+onclick="nextQuestion()">
 
-    <!-- 結果画面 -->
-    <section id="result" class="hidden">
+次へ
 
-        <h2 class="result-title">
-            診断結果
-        </h2>
+</button>
 
-        <p class="result-subtitle">
-            あなたにおすすめの副業はこちら
-        </p>
+</section>
 
-        <div id="resultCards"></div>
 
-        <button
-            class="restart-btn"
-            onclick="restart()">
-            もう一度診断する
-        </button>
+<!-- RESULT -->
 
-    </section>
+<section id="result" class="hidden">
+
+<h2 class="result-title">
+診断結果
+</h2>
+
+<p class="result-subtitle">
+あなたに合いやすい副業はこちら
+</p>
+
+<div id="resultCards"></div>
+
+
+<div class="cta">
+
+<h3>
+副業を始めてみたい方へ
+</h3>
+
+<p>
+「何から始めればいいかわからない」
+という方でも、まずは自分に合う方法を知るところから始められます。
+</p>
+
+<a
+class="line-btn"
+href="#"
+onclick="contactLine()">
+
+無料で相談する
+
+</a>
+
+<button
+class="share-btn"
+onclick="shareResult()">
+
+診断結果をシェアする
+
+</button>
+
+</div>
+
+
+<div class="info">
+
+<h2>
+副業を始める前に
+</h2>
+
+<div class="info-card">
+
+<h3>
+① 小さく始める
+</h3>
+
+<p>
+最初から大きな金額を使わず、
+無料または少額で試しながら自分に合う方法を探しましょう。
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>
+② 継続できる方法を選ぶ
+</h3>
+
+<p>
+副業は短期間で結果が出るとは限りません。
+自分の時間や興味に合った方法を選ぶことが重要です。
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>
+③ 収入は保証されない
+</h3>
+
+<p>
+副業による収入は作業量、案件、販売数、
+アクセス数などによって変わります。
+</p>
+
+</div>
+
+</div>
+
+
+<button
+class="restart-btn"
+onclick="restart()">
+
+もう一度診断する
+
+</button>
+
+<p class="notice">
+※診断結果はあくまで目安です。
+副業による収入を保証するものではありません。
+</p>
+
+</section>
 
 </main>
 
-<div class="footer">
-    © 2026 副業ナビ
-</div>
+
+<footer class="footer">
+
+© 2026 副業ナビ
+
+</footer>
 
 </div>
+
 
 <script>
 
+/* =========================
+   質問
+========================= */
+
 const questions = [
 
-    {
-        question: "1日に副業へ使える時間は？",
-        options: [
-            {text:"30分〜1時間", type:"easy"},
-            {text:"1〜2時間", type:"middle"},
-            {text:"3時間以上", type:"serious"}
-        ]
-    },
+{
+question:"1日に副業へ使える時間は？",
+options:[
+{text:"30分〜1時間",type:"short"},
+{text:"1〜2時間",type:"middle"},
+{text:"3時間以上",type:"long"}
+]
+},
 
-    {
-        question: "初期費用はいくらまで使えますか？",
-        options: [
-            {text:"できるだけ0円", type:"free"},
-            {text:"1万円程度", type:"small"},
-            {text:"5万円以上でもOK", type:"investment"}
-        ]
-    },
+{
+question:"初期費用はいくらまで使えますか？",
+options:[
+{text:"できるだけ0円",type:"free"},
+{text:"1万円程度",type:"small"},
+{text:"5万円以上でもOK",type:"investment"}
+]
+},
 
-    {
-        question: "顔出しはできますか？",
-        options: [
-            {text:"絶対にしたくない", type:"noface"},
-            {text:"どちらでもいい", type:"normal"},
-            {text:"顔出しできる", type:"face"}
-        ]
-    },
+{
+question:"顔出しはできますか？",
+options:[
+{text:"絶対にしたくない",type:"noface"},
+{text:"どちらでもいい",type:"normal"},
+{text:"顔出しできる",type:"face"}
+]
+},
 
-    {
-        question: "PCは持っていますか？",
-        options: [
-            {text:"持っていない", type:"smartphone"},
-            {text:"持っている", type:"pc"}
-        ]
-    },
+{
+question:"PCは持っていますか？",
+options:[
+{text:"持っていない",type:"smartphone"},
+{text:"持っている",type:"pc"}
+]
+},
 
-    {
-        question: "どれくらい稼ぎたいですか？",
-        options: [
-            {text:"月1〜3万円", type:"smallincome"},
-            {text:"月5〜10万円", type:"middleincome"},
-            {text:"月10万円以上", type:"highincome"}
-        ]
-    },
+{
+question:"どれくらい稼ぎたいですか？",
+options:[
+{text:"月1〜3万円",type:"smallincome"},
+{text:"月5〜10万円",type:"middleincome"},
+{text:"月10万円以上を目指したい",type:"highincome"}
+]
+},
 
-    {
-        question: "興味があることは？",
-        options: [
-            {text:"商品・買い物", type:"shopping"},
-            {text:"SNS・動画", type:"sns"},
-            {text:"PC作業", type:"pcwork"},
-            {text:"人と話すこと", type:"communication"}
-        ]
-    },
+{
+question:"興味があることは？",
+options:[
+{text:"商品・買い物",type:"shopping"},
+{text:"SNS・動画",type:"sns"},
+{text:"PC作業",type:"pcwork"},
+{text:"人と話すこと",type:"communication"}
+]
+},
 
-    {
-        question: "副業で一番重視することは？",
-        options: [
-            {text:"できるだけ楽に続けたい", type:"easy"},
-            {text:"収入を大きくしたい", type:"income"},
-            {text:"スキルを身につけたい", type:"skill"}
-        ]
-    }
+{
+question:"副業で一番重視することは？",
+options:[
+{text:"できるだけ初期費用を抑えたい",type:"easy"},
+{text:"収入を大きくしたい",type:"income"},
+{text:"スキルを身につけたい",type:"skill"}
+]
+}
 
 ];
 
+
 let currentQuestion = 0;
+
 let answers = [];
 
+
 const questionElement =
-    document.getElementById("question");
+document.getElementById("question");
 
 const optionsElement =
-    document.getElementById("options");
+document.getElementById("options");
 
 const nextButton =
-    document.getElementById("nextButton");
+document.getElementById("nextButton");
 
 const questionNumber =
-    document.getElementById("questionNumber");
+document.getElementById("questionNumber");
 
 const progressBar =
-    document.getElementById("progressBar");
+document.getElementById("progressBar");
 
 
-function loadQuestion() {
+/* =========================
+   質問表示
+========================= */
 
-    const q = questions[currentQuestion];
+function loadQuestion(){
 
-    questionNumber.textContent =
-        `質問 ${currentQuestion + 1} / ${questions.length}`;
+const q = questions[currentQuestion];
 
-    questionElement.textContent =
-        q.question;
+questionNumber.textContent =
+`質問 ${currentQuestion + 1} / ${questions.length}`;
 
-    optionsElement.innerHTML = "";
+questionElement.textContent =
+q.question;
 
-    nextButton.disabled = true;
+optionsElement.innerHTML = "";
 
-    q.options.forEach((option, index) => {
-
-        const button =
-            document.createElement("button");
-
-        button.className = "option";
-
-        button.textContent =
-            option.text;
-
-        button.onclick = () => {
-
-            document
-                .querySelectorAll(".option")
-                .forEach(btn =>
-                    btn.classList.remove("selected")
-                );
-
-            button.classList.add("selected");
-
-            answers[currentQuestion] =
-                option.type;
-
-            nextButton.disabled = false;
-        };
-
-        optionsElement.appendChild(button);
-
-    });
-
-    const progress =
-        (currentQuestion / questions.length) * 100;
-
-    progressBar.style.width =
-        progress + "%";
-}
+nextButton.disabled = true;
 
 
-function nextQuestion() {
+q.options.forEach((option)=>{
 
-    if (currentQuestion <
-        questions.length - 1) {
+const button =
+document.createElement("button");
 
-        currentQuestion++;
+button.className = "option";
 
-        loadQuestion();
-
-    } else {
-
-        showResult();
-
-    }
-}
+button.textContent =
+option.text;
 
 
-function showResult() {
+button.onclick = ()=>{
 
-    document
-        .getElementById("quiz")
-        .classList.add("hidden");
+document
+.querySelectorAll(".option")
+.forEach(btn =>
+btn.classList.remove("selected")
+);
 
-    document
-        .getElementById("result")
-        .classList.remove("hidden");
+button.classList.add("selected");
 
-    progressBar.style.width = "100%";
+answers[currentQuestion] =
+option.type;
 
-    const scores = {
+nextButton.disabled = false;
 
-        affiliate: 0,
-        sns: 0,
-        web: 0,
-        resale: 0
+};
 
-    };
 
-    answers.forEach(answer => {
+optionsElement.appendChild(button);
 
-        if (
-            answer === "shopping" ||
-            answer === "noface"
-        ) {
-            scores.affiliate += 3;
-        }
+});
 
-        if (
-            answer === "sns" ||
-            answer === "face"
-        ) {
-            scores.sns += 3;
-        }
 
-        if (
-            answer === "pc" ||
-            answer === "pcwork" ||
-            answer === "skill"
-        ) {
-            scores.web += 3;
-        }
+const progress =
+(currentQuestion / questions.length) * 100;
 
-        if (
-            answer === "shopping" ||
-            answer === "income"
-        ) {
-            scores.resale += 2;
-        }
-
-        if (
-            answer === "free" ||
-            answer === "noface"
-        ) {
-            scores.affiliate += 2;
-            scores.web += 2;
-        }
-
-        if (
-            answer === "highincome" ||
-            answer === "investment"
-        ) {
-            scores.sns += 1;
-            scores.resale += 1;
-        }
-
-    });
-
-    const ranking =
-        Object.entries(scores)
-        .sort((a,b) => b[1] - a[1]);
-
-    const data = {
-
-        affiliate: {
-            title:"アフィリエイト",
-            tag:"スマホ・PC向け",
-            description:
-                "商品やサービスを紹介して成果報酬を狙う副業です。ブログやSNSとの相性が良い方法です。",
-            income:"収入：成果やアクセス数によって変動"
-        },
-
-        sns: {
-            title:"SNS運用・動画",
-            tag:"SNS向け",
-            description:
-                "X・Threads・TikTokなどで情報発信し、広告やアフィリエイトなどにつなげる方法です。",
-            income:"収入：フォロワー数・案件・成果によって変動"
-        },
-
-        web: {
-            title:"Web制作・デジタル作業",
-            tag:"PC向け",
-            description:
-                "Webサイト制作やデジタル作業など、PCスキルを活用する副業です。",
-            income:"収入：案件単価・作業量によって変動"
-        },
-
-        resale: {
-            title:"ネット物販",
-            tag:"商品販売",
-            description:
-                "商品を仕入れて販売し、販売価格と仕入価格との差額を利益にする方法です。",
-            income:"収入：販売数・利益率によって変動"
-        }
-
-    };
-
-    const resultCards =
-        document.getElementById("resultCards");
-
-    resultCards.innerHTML = "";
-
-    ranking
-        .slice(0,3)
-        .forEach(([key,score]) => {
-
-            const item = data[key];
-
-            const card =
-                document.createElement("div");
-
-            card.className = "result-card";
-
-            card.innerHTML = `
-                <span class="tag">
-                    ${item.tag}
-                </span>
-
-                <h3>
-                    ${item.title}
-                </h3>
-
-                <p>
-                    ${item.description}
-                </p>
-
-                <div class="income">
-                    ${item.income}
-                </div>
-            `;
-
-            resultCards.appendChild(card);
-
-        });
+progressBar.style.width =
+progress + "%";
 
 }
 
 
-function restart() {
+/* =========================
+   次の質問
+========================= */
 
-    currentQuestion = 0;
+function nextQuestion(){
 
-    answers = [];
+if(currentQuestion <
+questions.length - 1){
 
-    document
-        .getElementById("result")
-        .classList.add("hidden");
+currentQuestion++;
 
-    document
-        .getElementById("quiz")
-        .classList.remove("hidden");
+loadQuestion();
 
-    loadQuestion();
+}else{
+
+showResult();
 
 }
 
+}
+
+
+/* =========================
+   結果
+========================= */
+
+function showResult(){
+
+document
+.getElementById("quiz")
+.classList.add("hidden");
+
+document
+.getElementById("result")
+.classList.remove("hidden");
+
+progressBar.style.width =
+"100%";
+
+
+const scores = {
+
+affiliate:0,
+sns:0,
+web:0,
+resale:0
+
+};
+
+
+answers.forEach(answer=>{
+
+
+if(
+answer==="shopping" ||
+answer==="noface" ||
+answer==="free"
+){
+
+scores.affiliate += 3;
+
+}
+
+
+if(
+answer==="sns" ||
+answer==="face"
+){
+
+scores.sns += 3;
+
+}
+
+
+if(
+answer==="pc" ||
+answer==="pcwork" ||
+answer==="skill"
+){
+
+scores.web += 3;
+
+}
+
+
+if(
+answer==="shopping" ||
+answer==="income"
+){
+
+scores.resale += 2;
+
+}
+
+
+if(
+answer==="highincome" ||
+answer==="investment"
+){
+
+scores.sns += 1;
+
+scores.resale += 1;
+
+}
+
+
+if(
+answer==="communication"
+){
+
+scores.sns += 2;
+
+}
+
+});
+
+
+const ranking =
+Object.entries(scores)
+.sort((a,b)=>b[1]-a[1]);
+
+
+const data = {
+
+
+affiliate:{
+
+title:"アフィリエイト",
+
+tag:"スマホ・PC向け",
+
+description:
+"商品やサービスを紹介し、条件を満たした成果に応じて報酬を得る方法です。ブログやSNSなどと組み合わせて運用できます。",
+
+income:
+"収入：成果数・アクセス数・紹介内容などによって変動",
+
+steps:[
+"紹介するジャンルを決める",
+"SNSやブログなどで情報発信する",
+"紹介リンクを設置する",
+"アクセスや成果を確認する"
+],
+
+link:"#"
+
+},
+
+
+sns:{
+
+title:"SNS運用・動画",
+
+tag:"SNS向け",
+
+description:
+"X・Threads・TikTokなどで情報を発信し、広告、アフィリエイト、案件などにつなげる方法です。",
+
+income:
+"収入：フォロワー数・アクセス・案件・成果などによって変動",
+
+steps:[
+"発信ジャンルを決める",
+"SNSアカウントを作る",
+"継続的に投稿する",
+"収益化方法を組み合わせる"
+],
+
+link:"#"
+
+},
+
+
+web:{
+
+title:"Web制作・デジタル作業",
+
+tag:"PC向け",
+
+description:
+"Webサイト制作や画像作成、デジタル作業など、PCスキルを活用して案件を受ける方法です。",
+
+income:
+"収入：案件単価・案件数・作業量などによって変動",
+
+steps:[
+"必要なスキルを学ぶ",
+"簡単な作品を作る",
+"ポートフォリオを用意する",
+"案件へ応募する"
+],
+
+link:"#"
+
+},
+
+
+resale:{
+
+title:"ネット物販",
+
+tag:"商品販売",
+
+description:
+"商品を仕入れて販売し、販売価格と仕入価格などの差額から利益を得る方法です。",
+
+income:
+"収入：販売数・利益率・仕入価格などによって変動",
+
+steps:[
+"販売ジャンルを決める",
+"商品の需要を調べる",
+"販売価格と利益を確認する",
+"販売・発送を行う"
+],
+
+link:"#"
+
+}
+
+};
+
+
+const resultCards =
+document.getElementById("resultCards");
+
+resultCards.innerHTML = "";
+
+
+ranking
+.slice(0,3)
+.forEach(([key,score],index)=>{
+
+
+const item = data[key];
+
+
+const card =
+document.createElement("div");
+
+card.className =
+"result-card";
+
+
+const steps =
+item.steps
+.map(step=>`<li>${step}</li>`)
+.join("");
+
+
+card.innerHTML = `
+
+<span class="rank">
+おすすめ ${index + 1}位
+</span>
+
+<h3>
+${item.title}
+</h3>
+
+<p>
+${item.description}
+</p>
+
+<div class="income">
+${item.income}
+</div>
+
+<h4 class="start-title">
+始め方
+</h4>
+
+<ol class="steps">
+${steps}
+</ol>
+
+<a
+class="detail-btn"
+href="${item.link}"
+onclick="return checkLink(this)">
+
+詳しく見る
+
+</a>
+
+`;
+
+resultCards.appendChild(card);
+
+});
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   LINE
+========================= */
+
+function contactLine(){
+
+/*
+ここに自分のLINE公式アカウントURLを入れる
+
+例：
+
+location.href =
+"https://lin.ee/XXXXXXXX";
+
+*/
+
+alert(
+"LINE相談ページを設定できます。\\n\\n次のステップであなたのLINEリンクを設定しましょう。"
+);
+
+}
+
+
+/* =========================
+   アフィリエイトリンク
+========================= */
+
+function checkLink(element){
+
+if(element.getAttribute("href")==="#"){
+
+alert(
+"このボタンには、あとからアフィリエイトリンクやおすすめサービスのURLを設定できます。"
+);
+
+return false;
+
+}
+
+return true;
+
+}
+
+
+/* =========================
+   SNSシェア
+========================= */
+
+function shareResult(){
+
+const shareText =
+"副業ナビで無料副業診断をやってみました！";
+
+const shareUrl =
+location.href;
+
+
+if(navigator.share){
+
+navigator.share({
+
+title:"副業ナビ",
+
+text:shareText,
+
+url:shareUrl
+
+});
+
+}else{
+
+navigator.clipboard.writeText(
+shareText + " " + shareUrl
+);
+
+alert(
+"シェア用リンクをコピーしました！"
+);
+
+}
+
+}
+
+
+/* =========================
+   最初に戻る
+========================= */
+
+function restart(){
+
+currentQuestion = 0;
+
+answers = [];
+
+document
+.getElementById("result")
+.classList.add("hidden");
+
+document
+.getElementById("quiz")
+.classList.remove("hidden");
+
+loadQuestion();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   起動
+========================= */
 
 loadQuestion();
 
